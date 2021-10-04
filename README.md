@@ -10,6 +10,15 @@ admin       123456
 1234        123
 12345       123
 
+| Login  | Password |
+| ------------- | ------------- |
+| admin  | 123456  |
+| 1  | 123  |
+| 12  | 123  |
+| 123  | 123  |
+| 1234  | 123  |
+| 12345  | 123  |
+
 If you login as user, you will be redirected to your reservated workplace or, if you didn't reserve it, to reservation panel. 
 If you already reserved workplace, you will see its name and list of your devices.
 If you don't have your workplace, you will see list of all worplaces in database, id of them, their description and see, is it used or not.
