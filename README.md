@@ -1,15 +1,7 @@
 When you launch this application for the first time, you will see Login panel, where you can print down your login/password or press "Registration" button if you don`t have account. 
 
 There is 6 accounts from start in database, 1 admin and 5 users.
-List of them:
-Login       Password
-admin       123456
-1           123
-12          123
-123         123
-1234        123
-12345       123
-
+All of them:
 | Login  | Password |
 | ------------- | ------------- |
 | admin  | 123456  |
