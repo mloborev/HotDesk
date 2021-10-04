@@ -48,12 +48,12 @@ namespace HotDesc.Controllers
         [HttpGet]
         public async Task<IActionResult> MyWorkplace()
         {
-            int kek = Convert.ToInt32(User.Claims.First(x => x.Type == "Id").Value);
+            int userId = Convert.ToInt32(User.Claims.First(x => x.Type == "Id").Value);
 
-            if (!await _reservationRepository.IsUserInTable(kek))
+            if (!await _reservationRepository.IsUserInTable(userId))
                 return RedirectToAction("Index", "Home");
 
-            var workplace = await _workplaceRepository.GetWorkplaceByCurrentUserId(kek);
+            var workplace = await _workplaceRepository.GetWorkplaceByCurrentUserId(userId);
 
             ViewBag.Workplace = workplace.Description;
             ViewBag.Devices = workplace.Devices;
@@ -79,8 +79,8 @@ namespace HotDesc.Controllers
         [HttpPost]
         public IActionResult Index(int id, bool mouse, bool keyboard, bool systemUnit, bool monitor, bool notebook)
         {
-            int kek = Convert.ToInt32(User.Claims.First(x => x.Type == "Id").Value);
-            _workplaceRepository.ReserveWorkplace(id, mouse, keyboard, systemUnit, monitor, notebook, kek);
+            int userId = Convert.ToInt32(User.Claims.First(x => x.Type == "Id").Value);
+            _workplaceRepository.ReserveWorkplace(id, mouse, keyboard, systemUnit, monitor, notebook, userId);
             return RedirectToAction("MyWorkplace", "Home");
         }
 
