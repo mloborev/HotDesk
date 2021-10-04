@@ -1,0 +1,9 @@
+﻿@using (Html.BeginForm("Logout", "Home", FormMethod.Post))
+{
+    <div class="input-form">
+        <input type="submit" name="logout" value="Log out" />
+    </div>
+}
+
+<h2>Your workplace - @ViewBag.Workplace</h2>
+<h3>Your devices - @ViewBag.Devices</h3>

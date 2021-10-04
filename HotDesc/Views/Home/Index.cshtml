@@ -1,0 +1,72 @@
+﻿@model IEnumerable<HotDesc.Models.Workplace>
+
+<style>
+    td {
+        min-width: 100px;
+        padding: 10px 20px;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+</style>
+
+@using (Html.BeginForm("Logout", "Home", FormMethod.Post))
+{
+    <div class="input-form">
+        <input type="submit" name="logout" value="Log out" />
+    </div>
+}
+
+<table class="table">
+    <tr><td>Id</td><td>Description</td><td>IsInUse</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.Id</td><td>@item.Description</td><td>@item.IsInUse</td></tr>
+    }
+</table>
+
+<form method="post" asp-action="Index">
+    <div>
+        <label for="id">Choose workplace to reserve:</label>
+        <select name="id">
+            @foreach (var item in Model)
+            {
+                if (item.IsInUse == true)
+                    continue;
+                <option value="@item.Id">@item.Id</option>
+            }
+        </select>
+    </div>
+
+    <div>
+        <p>Choose your devices:</p>
+
+        <div>
+            @Html.CheckBox("mouse", false)
+            <label for="mouse">Mouse</label>
+        </div>
+
+        <div>
+            @Html.CheckBox("keyboard", false)
+            <label for="keyboard">Keyboard</label>
+        </div>
+
+        <div>
+            @Html.CheckBox("systemUnit", false)
+            <label for="systemUnit">System unit</label>
+        </div>
+
+        <div>
+            @Html.CheckBox("monitor", false)
+            <label for="monitor">Monitor</label>
+        </div>
+
+        <div>
+            @Html.CheckBox("notebook", false)
+            <label for="notebook">Notebook</label>
+        </div>
+    </div>
+
+    <div>
+        <input type="submit" value="Choose" />
+    </div>
+</form>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<HotDesc.Models.Reservation>
+
+<a asp-action="Index">Home</a>
+
+<table class="table">
+    <tr><td>Id</td><td>EmployeeId</td><td>Date</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.Id</td><td>@item.EmployeeId</td><td>@item.Date</td></tr>
+    }
+</table>
+
+<form method="post" asp-action="DeleteReservation">
+    <p>
+        <label for="id">Choose reservation to delete:</label>
+        <select name="id">
+            @foreach (var item in Model)
+            {
+                <option value="@item.Id">@item.Id</option>
+            }
+        </select>
+    </p>
+
+    <p>
+        <input type="submit" value="Delete" />
+    </p>
+</form>

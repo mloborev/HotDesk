@@ -1,0 +1,49 @@
+﻿@model IEnumerable<HotDesc.Models.Workplace>
+
+<a asp-action="Index">Home</a>
+
+<table class="table">
+    <tr><td>Id</td><td>ReservationId</td><td>Description</td><td>Devices</td><td>IsInUse</td></tr>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.Id</td><td>@item.ReservationId</td><td>@item.Description</td><td>@item.Devices</td><td>@item.IsInUse</td></tr>
+    }
+</table>
+
+<form method="post" asp-action="AddWorkplace">
+
+    <input type="text" name="description" required placeholder="Description" />
+
+    <div>
+        <p>Devices:</p>
+
+        <div>
+            @Html.CheckBox("mouse", false)
+            <label for="mouse">Mouse</label>
+        </div>
+
+        <div>
+            @Html.CheckBox("keyboard", false)
+            <label for="keyboard">Keyboard</label>
+        </div>
+
+        <div>
+            @Html.CheckBox("systemUnit", false)
+            <label for="systemUnit">System unit</label>
+        </div>
+
+        <div>
+            @Html.CheckBox("monitor", false)
+            <label for="monitor">Monitor</label>
+        </div>
+
+        <div>
+            @Html.CheckBox("notebook", false)
+            <label for="notebook">Notebook</label>
+        </div>
+    </div>
+
+    <div>
+        <input type="submit" value="Add" />
+    </div>
+</form>

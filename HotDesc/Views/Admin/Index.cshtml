@@ -1,0 +1,13 @@
+﻿@using (Html.BeginForm("Logout", "Admin", FormMethod.Post))
+{
+    <div class="input-form">
+        <input type="submit" name="logout" value="Log out" />
+    </div>
+}
+
+<div><a asp-action="AddWorkplace">Add workplaces</a></div>
+<div><a asp-action="EditWorkplace">Edit workplaces</a></div>
+<div><a asp-action="DeleteWorkplace">Delete workplaces</a></div>
+<div><a asp-action="DeleteReservation">Delete reservations</a></div>
+
+
