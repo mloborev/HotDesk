@@ -12,7 +12,7 @@ admin       123456
 
 If you login as user, you will be redirected to your reservated workplace or, if you didn't reserve it, to reservation panel. 
 If you already reserved workplace, you will see its name and list of your devices.
-If you don`t have your workplace, you will see list of all worplaces in database, id of them, their description and see, is it used or not.
+If you don't have your workplace, you will see list of all worplaces in database, id of them, their description and see, is it used or not.
 Below you can choose free workplace and list of devices that you need. After pressing "Choose" button, you will be redirected to your reserved place.
 
 If you login as administrator, you will see 4 buttons:
@@ -33,4 +33,4 @@ After this user will have to reserve another table if he want to continue workin
 After you press fourth one, you will see list of reservations. It is empty by default, because all workplaces are free after creation. 
 If user reserve workplace, you will see id of reservation, id of employee and date of reservation. 
 Usually, reservation lasts till next day, but admin can delete it manually, using buttons below. 
-If you delete user`s reservation, he will have to reserve workplace again, because he`s workplace become free.
+If you delete user's reservation, he will have to reserve workplace again, because user's workplace become free.
